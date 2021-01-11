@@ -1559,20 +1559,23 @@ style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
 
 <script type="text/javascript">
   var count = 0;
+  var isPaused = false;
 
   function checkPageFocus() {
     if (document.hasFocus()) {
       console.log("focused");
     }
     else {
+      isPaused = true;
       count++;
       console.log("unfocused");
       alert("You have just left this window which is not allowed while participating on the test. Please return to the test by confirming this message, and do not leave the test page again.\n\nYou have left the test page " + count + " time(s).");
+      isPaused = false;
     }
   }
 
   // Check page focus every 300 milliseconds
-  setInterval(checkPageFocus, 300);
+  if (!isPaused) setInterval(checkPageFocus, 300);
 </script>
 
 </body>
