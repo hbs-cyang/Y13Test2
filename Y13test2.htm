@@ -1557,6 +1557,24 @@ style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
 
 </div>
 
+<script type="text/javascript">
+  var count = 0;
+
+  function checkPageFocus() {
+    if (document.hasFocus()) {
+      console.log("focused");
+    }
+    else {
+      count++;
+      console.log("unfocused");
+      alert("You have just left this window which is not allowed while participating on the test. Please return to the test by confirming this message, and do not leave the test page again.\n\nYou have left the test page " & count & " time(s).");
+    }
+  }
+
+  // Check page focus every 300 milliseconds
+  setInterval(checkPageFocus, 300);
+</script>
+
 </body>
 
 </html>
