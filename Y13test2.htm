@@ -1558,24 +1558,19 @@ style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
 </div>
 
 <script type="text/javascript">
-  var count = 0;
-  var isPaused = false;
 
   function checkPageFocus() {
     if (document.hasFocus()) {
       console.log("focused");
     }
     else {
-      isPaused = true;
-      count++;
       console.log("unfocused");
-      alert("You have just left this window which is not allowed while participating on the test. Please return to the test by confirming this message, and do not leave the test page again.\n\nYou have left the test page " + count + " time(s).");
-      isPaused = false;
+      alert("You have just left this window which is not allowed while participating on the test. Please return to the test by confirming this message, and do not leave the test page again.");
     }
   }
 
   // Check page focus every 300 milliseconds
-  if (!isPaused) setInterval(checkPageFocus, 300);
+  setInterval(checkPageFocus, 300);
 </script>
 
 </body>
